@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Preloader } from "@/components/ui/preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
+        <Preloader />
+        {children}
+      </body>
     </html>
   );
 }
