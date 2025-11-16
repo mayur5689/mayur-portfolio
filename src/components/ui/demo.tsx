@@ -12,7 +12,7 @@ import { Hero } from "@/components/ui/hero-1";
 
 export function SplineSceneBasic() {
 	return (
-		<div className="w-full h-[100svh] md:h-screen bg-black relative overflow-visible">
+		<div className="w-full h-[100svh] md:h-screen bg-black relative overflow-hidden md:overflow-visible">
 			<Spotlight
 				className="-top-40 left-0 md:left-60 md:-top-20"
 				fill="white"
@@ -62,7 +62,7 @@ const features = [
 
 export function DemoTwo() {
 	return (
-		<div className="relative overflow-hidden min-h-svh w-screen bg-black text-white flex flex-col items-center justify-center p-8">
+		<div className="relative overflow-hidden min-h-svh w-full bg-black text-white flex flex-col items-center justify-center p-8">
 			<div className="w-full max-w-6xl space-y-12 relative z-10">
 				<div className="flex flex-col items-center text-center space-y-8 mt-10">
 					<Badge variant="secondary" className="backdrop-blur-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 px-4 py-2 rounded-full">

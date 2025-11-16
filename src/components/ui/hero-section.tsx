@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Shape, ExtrudeGeometry, Mesh } from "three"
+import { Shape, ExtrudeGeometry } from "three"
+import type { Group } from "three"
 
 type BoxProps = {
 	position: [number, number, number]
@@ -64,7 +65,7 @@ const Box = ({ position, rotation }: BoxProps) => {
 }
 
 const AnimatedBoxes = () => {
-	const groupRef = useRef<THREE.Group>(null)
+	const groupRef = useRef<Group>(null)
 
 	useFrame((_, delta) => {
 		if (groupRef.current) {
