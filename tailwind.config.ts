@@ -46,12 +46,22 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
         spotlight: {
           "0%": { opacity: "0", transform: "translate(-10%, -10%) scale(0.8)" },
           "100%": { opacity: "1", transform: "translate(0, 0) scale(1)" },
         },
       },
       animation: {
+        "fade-in": "fadeIn 0.8s ease-out forwards",
+        "fade-up": "fadeUp 1s ease-out forwards",
         spotlight: "spotlight 1s ease-out forwards",
       },
     },

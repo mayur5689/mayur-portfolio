@@ -4,6 +4,7 @@ import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight"
 import { Home, User, Briefcase, FileText } from 'lucide-react'
 import { NavBar } from "@/components/ui/tubelight-navbar"
+import { Hero } from "@/components/ui/hero-1";
 
 export function SplineSceneBasic() {
 	return (
@@ -37,7 +38,7 @@ export function SplineSceneBasic() {
 }
 
 
-export function NavBarDemo() {
+export function NavBarDemo({ variant = "default" }: { variant?: "default" | "hero" }) {
 	const navItems = [
 		{ name: 'Home', url: '#', icon: Home },
 		{ name: 'About', url: '#', icon: User },
@@ -45,6 +46,18 @@ export function NavBarDemo() {
 		{ name: 'Resume', url: '#', icon: FileText }
 	]
 
-	return <NavBar items={navItems} />
+	return <NavBar items={navItems} variant={variant} />
+}
+
+export function DemoOne() {
+	return (
+		<Hero
+			title="Build smarter tools for modern teams"
+			subtitle="Streamline your workflow and boost productivity with intuitive solutions. Security, speed, and simplicity—all in one platform."
+			eyebrow="Next-Gen Productivity"
+			ctaLabel="Get Started"
+			ctaHref="#"
+		/>
+	);
 }
 

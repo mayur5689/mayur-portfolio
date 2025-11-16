@@ -15,9 +15,10 @@ interface NavItem {
 interface NavBarProps {
 	items: NavItem[]
 	className?: string
+	variant?: "default" | "hero"
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, variant = "default" }: NavBarProps) {
 	const [activeTab, setActiveTab] = useState(items[0].name)
 	const [isMobile, setIsMobile] = useState(false)
 
@@ -38,7 +39,14 @@ export function NavBar({ items, className }: NavBarProps) {
 				className,
 			)}
 		>
-			<div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+			<div
+				className={cn(
+					"flex items-center gap-3 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg border",
+					variant === "hero"
+						? "bg-white/80 border-black/10"
+						: "bg-background/5 border-border",
+				)}
+			>
 				{items.map((item) => {
 					const Icon = item.icon
 					const isActive = activeTab === item.name
@@ -50,15 +58,20 @@ export function NavBar({ items, className }: NavBarProps) {
 							onClick={() => setActiveTab(item.name)}
 							className={cn(
 								"relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-								"text-foreground/80 hover:text-primary",
-								isActive && "bg-muted text-primary",
+								variant === "hero"
+									? "text-black hover:text-black"
+									: "text-foreground/80 hover:text-primary",
+								isActive &&
+									(variant === "hero"
+										? "bg-black/5 text-black"
+										: "bg-muted text-primary"),
 							)}
 						>
 							<span className="hidden md:inline">{item.name}</span>
 							<span className="md:hidden">
 								<Icon size={18} strokeWidth={2.5} />
 							</span>
-							{isActive && (
+							{isActive && variant !== "hero" && (
 								<motion.div
 									layoutId="lamp"
 									className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
