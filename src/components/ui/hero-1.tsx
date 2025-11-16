@@ -36,8 +36,8 @@ export function Hero({
 
 			{/* Radial Accent */}
 			<div
-				className="absolute left-1/2 top-[72%] 
-        h-[360px] w-[560px] sm:h-[420px] sm:w-[640px] md:h-[500px] md:w-[900px] lg:h-[750px] lg:w-[1100px] 
+				className="absolute md:-left-[17%] -left-[43%] top-[75%] 
+        h-[500px] w-[700px] md:h-[500px] md:w-[1100px] lg:h-[750px] lg:w-[135%] 
         -translate-x-1/2 -translate-y-1/2 rounded-[100%] border-[#B48CDE] bg-white dark:bg-black 
         bg-[radial-gradient(closest-side,#fff_82%,#000000)] 
         dark:bg-[radial-gradient(closest-side,#000_82%,#ffffff)] 
