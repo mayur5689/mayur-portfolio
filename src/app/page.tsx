@@ -1,8 +1,9 @@
-import { SplineSceneBasic } from "@/components/ui/demo";
+import { SplineSceneBasic, NavBarDemo } from "@/components/ui/demo";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
+      <NavBarDemo />
       <SplineSceneBasic />
     </main>
   );
